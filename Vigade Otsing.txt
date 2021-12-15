@@ -1,0 +1,49 @@
+﻿print("*** ИГРЫ С ЧИСЛАМИ ***") #Mäng arvudega
+print()
+while 1: #tsükkli alustamine
+	try:
+		a=abs(int(input("Введите целое число => "))) #Sisetage täisarv
+		break #tsükkli lõppetamine
+	except ValueError: #viga
+		print("Это не целое число") #See on mitte täisarv
+if a==0: #muutuja(a) kontrollimine
+	print("Нет смысла ничего делать с нулём") #Pole mõttet midagi teha nulliga
+else:
+	print("Определяем, сколько в числе чётных и сколько нечётных цифр") #Arvutame kui palju arvudes on paaris- ja paaritunumbri
+	print()
+	c=b=a #muutuja(c) võrrdneb muutuja(b) võrdneb muutuja (a)
+	paaris=0 #muutuja(paaris) väärtuse määramine
+	paaritu=0 #muutuja(paaritu) väärtuse määramine
+	while b>0: #tsükkel kuni muutuja(b) võrdneb 0
+		if b%2==0: #muutuja(b) jagamine 2, mille ülejääk võrdneb 0 kontroll
+			paaris+=1 #muutuja(paaris) liitumine 1
+		else:
+			paaritu+=1 #muutuja(paaritu) liitumine 1
+		b=b//10 #muutuja(b) võrdneb muutaja(b) jagamise 10 ilma ülejääki
+	print("Чётных цифр:",paaris) #Muutuja paaris väljendamine
+	print("Нечётных цифр:",paaritu) #Muutuja paaritu väljendamine
+	print()
+	print("*Переворачиваем* введённое число") #Sisetud arve *Ümber pööramine*
+	print()
+	b=0 #muutuja(b) võrdneb 0
+	while a>0: #tsükkel kuni muutuja(a) on rohkem kui 0
+		number=a%10 #muutuja(number) võrdneb muutuja(a) jagamise 10, mis võrdneb arvu ülejääki
+		a=a//10 #muutuja(a) võrdneb muutuja(a) jagamise 10 ilma ülejääki
+		b=b*10 #muutuja(b) võrdneb muutuja(b) korrutamise 10
+		b+=number #muutuja(b) liitumine muutuja(number)
+	print("*Перевёрнутое* число", b) #*Ümber pööratud arv*
+	print()
+	print("Проверяем гипотезу Сиракуз") #Kontrollime Süracuse hüpoteesi
+	print()
+	if c%2==0: #muutuja(c) jagamine 2, milline ülejääk võrdneb 0 kontroll
+		print(c," - чётное число. Делим на 2.") #Muutujad - c (täisarv) jagame 2
+	else:
+		print(c," - нечётное число. Умножаем на 3, прибавляем 1 и делим на 2.") #Muutujad - c (mitte täisarv) korrutame 3, lisame 1 ja jagame 2
+	while c!=1: #tsükkel kuni muutuja(c) ei võrdu 1
+		if c%2==0: 
+			c=c/2 
+		else:
+			c=(3*c+1)/2 #tehed muutujaga(c)
+		print(int(c),end=" ") #muutuja(c) väljendamine
+	print()
+	print("Гипотеза верна") #Hüpotees on õige
